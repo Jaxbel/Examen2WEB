@@ -1,0 +1,112 @@
+{% extends "app/inicio.html" %}
+
+{% block title %} Almacen {% endblock %}
+
+{% block contenido %}
+
+
+<div class="container">
+    
+    <h5 class="card-title">Datos del Almacen</h5>
+    <br>
+
+    <h6> Area automotriz </h6>
+    <form action="#">
+      <label for="lang"> Productos terminados necesarios </label>
+      <select name="" id="lang">
+        <option value="450">450</option>
+        <option value="500">500</option>
+        <option value="550">550</option>
+        <option value="600">600</option>
+      </select>
+      <input type="submit" value="Enviar" />
+  </form>
+  
+  <div class="card text-start">
+    
+    <div class="card-body">
+      
+      <label for="name">Numero de piezas</label>
+      
+      <input type="text" id="name" name="name" required
+      minlength="4" maxlength="8" size="3">  
+      
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ formulario }}
+        <input type="submit" value="Submit">
+      </form>
+      
+    </div>
+  </div>
+
+
+    <!---->
+    <br>
+    <h6> Area micro tecnologia </h6>
+    <form action="#">
+        <label for="lang"> Productos terminados necesarios </label>
+        <select name="" id="lang">
+          <option value="310">310</option>
+          <option value="350">350</option>
+          <option value="400">400</option>
+          <option value="450">450</option>
+        </select>
+        <input type="submit" value="Enviar" />
+    </form>
+    
+    <div class="card text-start">
+      
+      <div class="card-body">
+        
+        <label for="name">Numero de piezas</label>
+        
+        <input type="text" id="name" name="name" required
+        minlength="4" maxlength="8" size="3">  
+        
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ formulario }}
+          <input type="submit" value="Submit">
+        </form>
+        
+      </div>
+    </div>
+    
+
+    
+</div>
+
+<div class="card-body">
+
+  <h4> Datos </h4>
+  <div class="table-responsive">
+      <table class="table table-primary">
+          <thead>
+              <tr>
+                  <th>ID</th>                       
+                  <th>Nombre de quien entrega</th>
+                  <th>Nombre jefe de linea</th>
+                  <th>Piezas Automotriz</th>
+                  <th>Piezas Microtecnologia</th>
+                  <th>Productos Automotriz Terminadas</th>
+                  <th>Productos Micro Tec. Terminadas</th>
+                  <th>status</th>
+                  <th>Fecha</th>
+              </tr>
+  
+          </thead>
+          <tbody>
+              
+              <!--{% for jugador in jugadores %}
+              
+              {% endfor %}
+             !-->
+          </tbody>
+      </table>
+  </div>
+
+
+
+{% endblock %}
+

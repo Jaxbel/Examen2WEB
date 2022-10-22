@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{% block titulo %}  {% endblock %} </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{% url 'inicio' %}" class="w3-bar-item w3-button w3-padding-large w3-white">Inicio</a>
+    <a href="{% url 'almacen' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Almacen</a>
+    <a href="{% url 'produccion' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Produccion</a>
+    <a href="{% url 'calidad' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Calidad</a>
+    <a href="{% url 'reportes' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Reportes</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <div class="nav navbar-nav">    
+                
+      <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
+      <a class="nav-link" href="{% url 'almacen' %}">Almacen</a>
+      <a class="nav-link" href="{% url 'produccion' %}">Produccion</a>    
+      <a class="nav-link" href="{% url 'calidad' %}">Calidad</a>    
+      <a class="nav-link" href="{% url 'reportes' %}">Reportes</a>   
+    </div>
+    <div class="navbar-nav">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Usuario</a></li>
+              <li><a class="dropdown-item" href="#">Salir  </a></li>
+          </ul>
+      </li>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:15px 16px">
+  <h1 class="w3-margin w3-jumbo">Parra's Inc.</h1>
+  <p class="w3-xlarge">Automotriz y Micro Tecnologia</p>
+  
+</header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <br>
+        {% block contenido %}  {% endblock %}
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Powered by <a href="" target="_blank">Jazziel Bello Neccochea/a></p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+</script>
+
+
+</body>
+</html>
